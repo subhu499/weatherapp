@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+// import './Weather.css';
 
 const Weather = () => {
   const [location, setLocation] = useState('');
@@ -25,18 +26,18 @@ const Weather = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 flex justify-center">
-      <div className="text-center">
-        <h1 className="text-2xl font-bold mb-4">Weather App</h1>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-2xl font-bold mb-4">Weather App</h1>
+      <div className="flex flex-col items-center">
         <input
           type="text"
           placeholder="Enter location"
-          className="border border-gray-300 rounded px-4 py-2 mb-4 w-full max-w-sm"
+          className="border border-gray-300 rounded px-4 py-2 mb-4 w-full md:w-64"
           value={location}
           onChange={handleLocationChange}
         />
         {weatherData && (
-          <div>
+          <div className="text-center">
             <h2 className="text-xl font-bold mb-2">
               {weatherData.location.name}, {weatherData.location.country}
             </h2>
